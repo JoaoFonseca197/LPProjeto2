@@ -2,12 +2,11 @@ namespace Projeto2
 {
     public class Pieces
     {
-        public string name ;
+        public string name {get; } 
         public Color color ;
-
-
         public Position pos;
 
+        //cada peça é criada com um nome e pos (o num vai dar as coordenas)
         public Pieces (string name, Color color, int num)
         {
             this.name = name;
@@ -15,13 +14,16 @@ namespace Projeto2
             this.pos = Position(num);
         }
 
+        //caso de espaço em branco
         public Pieces ()
         {
             name = " ";
         }
 
-        public string GetName() => name;
 
+        
+
+        // com o num vai dar a posição à peça 
         private Position Position (int num)
         {
             switch (num)

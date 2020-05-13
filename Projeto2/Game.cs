@@ -14,8 +14,14 @@ namespace Projeto2
         }
         public void Play()
         {
+            //do
             //dá print ao board
             ui.Print(board);
+
+            //possivel modo de fazer mover a peça. Já que temos todas as posiçôes
+            //no switch verificar se há alguma peça no sitio pedido 
+            //depois moverS
+            //while(!End)
         }
 
     }
