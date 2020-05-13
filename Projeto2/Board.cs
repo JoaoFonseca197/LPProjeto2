@@ -6,10 +6,10 @@ namespace Projeto2
         //cria um array de arrays
         Pieces [][] board = new Pieces[5][];
         //completa o tabuleiro com as peças
-        private Pieces B1,B2,B3,B4,B5,B6,W1,W2,W3,W4,W5,W6;
+        public Pieces B1,B2,B3,B4,B5,B6,W1,W2,W3,W4,W5,W6;
         public Board()
         {
-            B1 = new Pieces("B1", Color.Black,1);
+            B1 = new Pieces("B1", Color.Black,2);
             B2 = new Pieces("B2", Color.Black,2);
             B3 = new Pieces("B3", Color.Black,3);
             B4 = new Pieces("B4", Color.Black,4);
@@ -29,22 +29,30 @@ namespace Projeto2
             board[4] = new Pieces[3] {W1,W2,W3};  
         }
 
-        /*public bool End
+        public bool End
         {
             get
             {
-
+                return true;
             }
-        }*/
+        }
         //recebe as coordenadas e vai pedir nome à posições
         public string GetPieceName( int y, int x )
         {
             return board[y][x].name;
             
         }
-        
 
-        
+        public void MakeMove(Pieces pieces, Position pos)
+        {
+            board[pos.Row][pos.Col] = pieces;
+        }
+
+        /*public Board MovePiece ( Board board)
+        {
+            B1= board[4][0];
+        }*/
+    
 
     }
 }
