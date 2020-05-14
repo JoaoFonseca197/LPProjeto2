@@ -67,6 +67,11 @@ namespace Projeto2
             return move;
         }
 
+        public void RenderMessage(string str)
+        {
+            Console.WriteLine(str);
+        } 
+
     }
 }
 

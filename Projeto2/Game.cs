@@ -28,6 +28,10 @@ namespace Projeto2
                 Console.WriteLine(move);
                 nextMovePos = ConvertToPos(move);
                 board.MakeMove(peça,nextMovePos);
+                if(!board.MakeMove(peça, nextMovePos))
+                {
+                    ui.RenderMessage("This is not a legal move");
+                }
                 ui.PrintBoard(board);
 
             }while(!board.End);
@@ -43,6 +47,7 @@ namespace Projeto2
                 case 4: return new Position (1,0);
                 case 5: return new Position (1,1);
                 case 6: return new Position (1,2);
+                case 7: return new Position (2,0);
                 case 8: return new Position (3,0);
                 case 9: return new Position (3,1);
                 case 10: return new Position (3,2);
