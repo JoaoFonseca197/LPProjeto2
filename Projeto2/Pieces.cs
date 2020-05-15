@@ -3,15 +3,15 @@ namespace Projeto2
     public class Pieces
     {
         public string name {get; } 
-        public Color color ;
-        public Position pos;
+        public Color color {get; }
+        public Position pos{get; set;}
 
         //cada peça é criada com um nome e pos (o num vai dar as coordenas)
-        public Pieces (string name, Color color)
+        public Pieces (string name, Color color, Position pos)
         {
             this.name = name;
             this.color = color;
-            //this.pos = 
+            this.pos = pos;
         }
 
         //caso de espaço em branco

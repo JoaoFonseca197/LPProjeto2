@@ -11,14 +11,14 @@ namespace Projeto2
                 Console.WriteLine("--------------------------------");
                 if(i == 2)
                 {
-                    Console.WriteLine("            |"+board.GetPieceName(2,0)+"     |");
+                    Console.WriteLine("            |"+board.GetPieceName(new Position(2,0))+"     |");
                 }
                 else if (i== 0 || i == 4)
                 {
                     
                     for(int j = 0; j < 3; j++)
                     {
-                        Console.Write("|    "+board.GetPieceName(i,j)+"   ");
+                        Console.Write("|    "+board.GetPieceName(new Position(i,j))+"   ");
                     }
                     Console.WriteLine("  | ");
 
@@ -28,7 +28,7 @@ namespace Projeto2
                     Console.Write("     ");
                     for(int j = 0; j < 3; j++)
                     {
-                        Console.Write("|  "+board.GetPieceName(i,j)+"  ");
+                        Console.Write("|  "+board.GetPieceName(new Position(i,j))+"  ");
                     }
                     Console.WriteLine(" |");
                 }
