@@ -44,16 +44,31 @@ namespace Projeto2
             Console.WriteLine($"Jogador qual é a peça ?");
             aux = Console.ReadLine();
             peça = int.Parse(aux);
-            
-            switch (peça)
+            if( board.Turn == 0)
             {
-                case 1: return board.B1;
-                case 2: return board.B2;
-                case 3: return board.B3;
-                case 4: return board.B4;
-                case 5: return board.B5;
-                case 6: return board.B6;
-                default: return null;
+                switch (peça)
+                {
+                    case 1: return board.B1;
+                    case 2: return board.B2;
+                    case 3: return board.B3;
+                    case 4: return board.B4;
+                    case 5: return board.B5;
+                    case 6: return board.B6;
+                    default: return null;
+                } 
+            }
+            else
+            {
+              switch (peça)
+                {
+                    case 1: return board.W1;
+                    case 2: return board.W2;
+                    case 3: return board.W3;
+                    case 4: return board.W4;
+                    case 5: return board.W5;
+                    case 6: return board.W6;
+                    default: return null;
+                }  
             }
         }
         

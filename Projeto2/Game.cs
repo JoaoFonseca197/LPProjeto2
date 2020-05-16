@@ -21,20 +21,20 @@ namespace Projeto2
                 int move;
                 //dá print ao board
                 ui.PrintBoard(board);
+
                 peça = ui.ReadChosenPiece(board);
                 //nextMovePos = ConvertToPos(move);
-                
+
                 move = ui.ReadMovement();
-                Console.WriteLine(move);
                 nextMovePos = ConvertToPos(move);
-                board.MakeMove(peça,nextMovePos);
-                if(!board.MakeMove(peça, nextMovePos))
+
+                if(board.MakeMove(peça, nextMovePos))
                 {
                     ui.RenderMessage("This is not a legal move");
                 }
-                ui.PrintBoard(board);
+                
 
-            }while(!board.End);
+            }while(board.End);
         }
 
         public Position ConvertToPos(int num)
