@@ -37,52 +37,28 @@ namespace Projeto2
             Console.WriteLine("--------------------------------\n");
         }
 
-        public int AskForChosenPiece()
+        public int AskForChosenPiece(int turn)
         {
             string aux;
             int piece;
-            Console.WriteLine($"Jogador qual é a peça ?");
+            if(turn == 0)
+            {
+                Console.WriteLine($"Black chose your piece");
+            }
+            else
+            {
+                Console.WriteLine($"White chose your piece");
+            }
             aux = Console.ReadLine();
             piece = int.Parse(aux);
             return piece;
-
-           /* else
-            {
-               if( board.Turn == 0)
-                {
-                    switch (peça)
-                    {
-                        case 1: return board.B1;
-                        case 2: return board.B2;
-                        case 3: return board.B3;
-                        case 4: return board.B4;
-                        case 5: return board.B5;
-                        case 6: return board.B6;
-                        default: return null;
-                    } 
-                }
-                else
-                {
-                switch (peça)
-                    {
-                        case 1: return board.W1;
-                        case 2: return board.W2;
-                        case 3: return board.W3;
-                        case 4: return board.W4;
-                        case 5: return board.W5;
-                        case 6: return board.W6;
-                        default: return null;
-                    }  
-                } 
-            }*/
-            
         }
         
         public int ReadMovement()
         {
             string aux;
             int move;
-            Console.WriteLine($"Jogador qual é a movimento ?");
+            Console.WriteLine($"What's your Play ?");
             aux = Console.ReadLine();
             move = int.Parse(aux);
             return move;
@@ -92,6 +68,17 @@ namespace Projeto2
         {
             Console.WriteLine(str);
         } 
+
+        public void PrintRules()
+        {
+            Console.WriteLine("\n \nWelcome to the Fellis Game !!!");
+            Console.WriteLine("Underneath will be the rules");   
+            Console.WriteLine("\nThe pieces only can move one house.");
+            Console.WriteLine("Only can eat one piece");
+            Console.WriteLine("And this are the movements");
+            Console.WriteLine("1 2 3 \n4 5 6 \n  7 \n8 9 10 \n11 12 13 ");
+            Console.WriteLine("HAVE FUN !!!\n");
+        }
 
     }
 }

@@ -20,6 +20,7 @@ namespace Projeto2
         public Pieces ()
         {
             name = " ";
+            color = Color.Empty;
         }
     }
 }

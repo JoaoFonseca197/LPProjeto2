@@ -14,6 +14,7 @@ namespace Projeto2
         }
         public void Play()
         {
+            ui.PrintRules();
             do
             {
                 Pieces piece;
@@ -22,14 +23,14 @@ namespace Projeto2
                 int numPiece = 0;
                 //dá print ao board
                 ui.PrintBoard(board);
-                numPiece = ui.AskForChosenPiece();
+                numPiece = ui.AskForChosenPiece(board.Turn);
 
                 piece = board.GiveChosenPiece(numPiece);
                 
                 move = ui.ReadMovement();
                 nextMovePos = ConvertToPos(move);
 
-                if(!board.MakeMove(piece, nextMovePos))
+                if(!board.CanMove(piece, nextMovePos))
                 {
                     ui.RenderMessage("This is not a legal move");
                 }
