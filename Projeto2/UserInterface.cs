@@ -1,9 +1,15 @@
 using System;
 namespace Projeto2
 {
+    /// <summary>
+    /// Used to Render the messages
+    /// </summary>
     public class UserInterface
     {
-        //imprime o tabuleiro
+        /// <summary>
+        /// renders the board
+        /// </summary>
+        /// <param name="board">Board created </param>
         public void PrintBoard (Board board)
         {
             for(int i = 0; i < 5; i++)
@@ -37,9 +43,17 @@ namespace Projeto2
             Console.WriteLine("--------------------------------\n");
         }
 
+        /// <summary>
+        /// This renders 2 messages depending of the turn 
+        /// The parameter is the turn this will decide what message to print
+        /// </summary>
+        /// <param name="turn">Has the values ​​of 0 or 1</param>
+        /// <returns>A value between 1 and 6</returns>
         public int AskForChosenPiece(int turn)
         {
+            //saves the option of the player
             string aux;
+            //option of the player converted to int
             int piece;
             if(turn == 0)
             {
@@ -54,6 +68,10 @@ namespace Projeto2
             return piece;
         }
         
+        /// <summary>
+        /// Asks the player whats is the next movement
+        /// </summary>
+        /// <returns>Int meaning the position/move</returns>
         public int ReadMovement()
         {
             string aux;
@@ -64,11 +82,18 @@ namespace Projeto2
             return move;
         }
 
+        /// <summary>
+        /// Renders the message 
+        /// </summary>
+        /// <param name="str">Message the is give as parameter</param>
         public void RenderMessage(string str)
         {
             Console.WriteLine(str);
         } 
 
+        /// <summary>
+        /// Renders the rules
+        /// </summary>
         public void PrintRules()
         {
             Console.WriteLine("\n \nWelcome to the Fellis Game !!!");
@@ -78,6 +103,22 @@ namespace Projeto2
             Console.WriteLine("And this are the movements");
             Console.WriteLine("1 2 3 \n4 5 6 \n  7 \n8 9 10 \n11 12 13 ");
             Console.WriteLine("HAVE FUN !!!\n");
+        }
+
+        /// <summary>
+        /// Renders the winner
+        /// </summary>
+        /// <param name="board">The board created</param>
+        public void RenderWinner(Board board)
+        {
+            if(board.BlackWin)
+            {
+                Console.WriteLine("Black Wins");
+            }
+            else
+            {
+                Console.WriteLine("White Wins");
+            }
         }
 
     }
