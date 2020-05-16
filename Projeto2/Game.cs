@@ -16,22 +16,24 @@ namespace Projeto2
         {
             do
             {
-                Pieces peça;
+                Pieces piece;
                 Position nextMovePos;
                 int move;
+                int numPiece = 0;
                 //dá print ao board
                 ui.PrintBoard(board);
+                numPiece = ui.AskForChosenPiece();
 
-                peça = ui.ReadChosenPiece(board);
-                //nextMovePos = ConvertToPos(move);
-
+                piece = board.GiveChosenPiece(numPiece);
+                
                 move = ui.ReadMovement();
                 nextMovePos = ConvertToPos(move);
 
-                if(board.MakeMove(peça, nextMovePos))
+                if(!board.MakeMove(piece, nextMovePos))
                 {
                     ui.RenderMessage("This is not a legal move");
                 }
+                
                 
 
             }while(board.End);

@@ -82,15 +82,34 @@ namespace Projeto2
             
         }
 
-        //public void GetChosenPiece()
-
-        
-
-        /*public Board MovePiece ( Board boardPieces)
+        public Pieces GiveChosenPiece(int piece)
         {
-            B1= board[4][0];
-        }*/
-    
-
+            if( Turn == 0)
+            {
+                switch (piece)
+                {
+                    case 1: return B1;
+                    case 2: return B2;
+                    case 3: return B3;
+                    case 4: return B4;
+                    case 5: return B5;
+                    case 6: return B6;
+                    default: return null;
+                } 
+            }
+            else
+            {
+                switch (piece)
+                {
+                    case 1: return W1;
+                    case 2: return W2;
+                    case 3: return W3;
+                    case 4: return W4;
+                    case 5: return W5;
+                    case 6: return W6;
+                    default: return null;
+                }  
+            }
+        }
     }
 }
